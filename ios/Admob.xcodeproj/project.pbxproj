@@ -19,6 +19,8 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* AdmobTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AdmobTests.m */; };
 		37373B7C49D478AE4735E2A4 /* libPods-Admob-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 059B3E7CAB27A95FDFF86FE0 /* libPods-Admob-tvOS.a */; };
+		3CB6199E2466143E008B770A /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB6199D2466143E008B770A /* GoogleMobileAds.framework */; };
+		3CB6199F2466145F008B770A /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB6199D2466143E008B770A /* GoogleMobileAds.framework */; };
 		5673EC1EBB84E206F7824A68 /* libPods-Admob-AdmobTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8F4E39945078DF8BC079B9 /* libPods-Admob-AdmobTests.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Admob/main.m; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Admob-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Admob-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Admob-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Admob-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CB6199D2466143E008B770A /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		496991401E47478BC63B3CA1 /* Pods-Admob-AdmobTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Admob-AdmobTests.debug.xcconfig"; path = "Target Support Files/Pods-Admob-AdmobTests/Pods-Admob-AdmobTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EF04B6EF18BFC3558D673FA /* Pods-Admob-AdmobTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Admob-AdmobTests.release.xcconfig"; path = "Target Support Files/Pods-Admob-AdmobTests/Pods-Admob-AdmobTests.release.xcconfig"; sourceTree = "<group>"; };
 		76F42B0864D140D74962E326 /* Pods-Admob-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Admob-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Admob-tvOSTests/Pods-Admob-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CB6199F2466145F008B770A /* GoogleMobileAds.framework in Frameworks */,
 				5673EC1EBB84E206F7824A68 /* libPods-Admob-AdmobTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CB6199E2466143E008B770A /* GoogleMobileAds.framework in Frameworks */,
 				08CCEBAC94C63CCD218F12F2 /* libPods-Admob.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +144,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3CB6199D2466143E008B770A /* GoogleMobileAds.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				A96AF8FCABB576F8E7AE5E2D /* libPods-Admob.a */,
@@ -194,7 +200,6 @@
 				76F42B0864D140D74962E326 /* Pods-Admob-tvOSTests.debug.xcconfig */,
 				F1C16779892A2396EC3190FA /* Pods-Admob-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -585,6 +590,10 @@
 			baseConfigurationReference = 496991401E47478BC63B3CA1 /* Pods-Admob-AdmobTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -609,6 +618,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AdmobTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -631,6 +644,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
@@ -657,6 +674,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Admob/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
